@@ -1,0 +1,213 @@
+* {box-sizing: border-box;margin: 0;}
+html {scroll-behavior: smooth;}
+.pozadina {
+  background-image: url('sliki/6070043.jpg');
+  opacity: 90%;
+  min-height:90vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.5);
+}
+.container {
+  position: relative;
+  margin: 20px;
+  width: auto;
+  float: right;
+  text-align: center;
+}
+nav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin: .1em 1em;
+  border: 2px solid transparent;
+}
+nav a:hover {
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    margin: .1em 1em;
+    border-radius: 20px;
+}
+#aktivno{ 
+  color: #ffffff; 
+  border-style: solid;
+  border-color: #87008b;
+  border-width: 2px;
+  border-radius: 20px;
+}
+.one{
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+.one p{
+  font-size: 1.1em;
+}
+.one p a{
+  text-decoration: none;
+  position: relative;
+  display: inline;
+  overflow: hidden;
+  background: linear-gradient(to right, #4568dc  50%, #ff81ca 50%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+}
+.one p a:hover{background-position: 0 100%;}
+.one h1 span{
+  border-bottom: 5px solid #87008b;
+  font-size: 3em;
+}
+.one h2{
+  font-size: 2.2em;
+  color: white;
+  position:relative;
+  text-align: center;
+  padding-right: 510px;
+}
+.nesto{
+  margin-bottom: 3em;
+}
+#cv img{
+  width: 30%;
+  float: right;
+  height: 30%;
+  position:relative;
+  
+  border-radius: 50%;
+  outline: 5px solid #87008b;
+  padding: 10px;
+}
+.jas{
+margin-right: 100px;
+}
+#cv h1 span{
+  border-bottom: 5px solid #87008b;
+}
+#cv h1{
+  text-align: center;
+  font-family: Lobster; font-size: 40px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
+} 
+.j::first-letter {    
+  font-size: 4em;
+  float: left;
+  display: block;
+  position: relative;
+  padding: 0 5px 5px 0;
+  top: 30px;
+}
+.tekst{
+padding: 30px;
+text-align: justify;
+max-width: 50%;
+position: relative;
+margin-left: 70px;
+line-height: normal;
+background-color: #ca86e66c;
+border-radius: 10px;
+height: auto;
+}  
+.tekst p, .pat li{margin-bottom: 1em; } 
+#omileni{
+  width:100%;
+  height:200px;
+  padding: 30px 20px;
+  left: 0;
+  bottom: 0;
+  position: relative;
+}
+#omileni h2{
+  text-align: center;font-family: Lobster; font-size: 40px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; 
+}
+#omileni h2 span{
+  border-bottom: 5px solid #87008b;
+}
+li span{
+  border-bottom: 5px solid #87008b;
+  font-family: Lobster;
+  font-size: 25px;
+}
+#omileni li{color: white;}
+#omileni li a:hover{
+  transform: scale(1.1);
+}
+.pat,.muz,.ser{
+  position: relative;
+  display: inline-flex;
+}
+.pat{
+  float:left; 
+  background-image: url('sliki/961655.webp');
+  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.3);
+  opacity: 80%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width:20%;
+  height:500px;
+  padding-left: 0;
+border:solid black;
+padding-left: 2%;
+}
+.pat ul{padding: 0;list-style-type: none;}
+.muzika{
+  list-style: none;
+  padding: 0;
+  list-style-type: none;
+}
+.muzika li{
+  display: inline-flex;
+}
+.muz{
+  float:left; 
+  background-image: url('sliki/Apple-Music-icon-001.jpg');
+  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.4);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  width:38%;
+  height:500px;
+  border:solid black;
+  margin-left:10px;
+  padding-left: 2%;
+}
+.serii{
+  list-style-type: none;}
+.serii li{
+  display: inline-block;
+}
+.ser{
+  float:right; 
+  background-image: url('sliki/serii.jpg');
+  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.4);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  width:40%;
+  height:500px;
+  border:solid black;
+  margin-left: 10px;
+  padding-left: 2%;
+}
+footer{
+  position: relative;
+  display:block; 
+  margin-top:30%;
+	width: 100%;
+  height: auto;
+	left: 0;
+	bottom: 0;
+	background-color: rgb(32, 31, 31);
+	color: #d1d1d1;
+	text-align: center;
+}

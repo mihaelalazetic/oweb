@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="kontakt.css" >
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакт</title>
+    <style>
+    a img:last-child {
+    display: none;  
+  }
+  a:hover img:last-child {
+    display: block;  
+  }
+  a:hover img:first-child {
+    display: none;  
+  }
+  p a img {
+      float:inline-start;
+    display: flex;
+    padding: 10px;
+    align-self: center;
+  }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <nav>
+      <a href="doma.html">Дома </a>
+      <a href="galerija.html" >Галерија</a>
+      <a href="blog.html" >Блог</a>
+      <a href="kontakt.html" id="aktivno">Контакт</a>
+      </nav>
+    </div>
+    
+
+      <div>
+        <h1><span>Контакт</span></h1> <br>
+        <div class="anketa">
+          <div class="centar">
+          <h2>Што мислите за мојата страна?</h2>
+          <span> За да добијам feedback од вас, пополнете ја следнава анкета:</span>
+
+          <form autocomplete="on">
+              <label >Име:</label>
+              <input type="text" name="fname" required ><br><br>
+
+              <label>Денешен датум</label> <input type="date"><br><br>
+
+              <label>Колку ви се допаѓаше страната? (Оценка од 1-10)</label><br><br>
+              <input type="range" min="1" id="range_weight" required value="5" max="10"oninput="range_weight_disp.value = range_weight.value" > 
+              <output  id="range_weight_disp"></output><br><br>
+
+          <p class="dopagja"> Што ви се допаѓаше? <br><br>
+          <label><input type="checkbox" name="like" value="Боите">Боите</label>
+          <label><input type="checkbox" name="like" value="дизајн">Дизајнот</label>
+          <label><input type="checkbox" name="like" value="песни">Песните</label>
+          <label><input type="checkbox" name="like" value="серии">Сериите</label>
+          <label><input type="checkbox" name="like" value="др">Друго</label>
+          </p>
+          <br>    
+              <p><label>Коментари:<br><br>    
+                  <textarea name = "comments"
+                    rows = "5" cols = "40" placeholder="Внеси коментар"></textarea>
+              </label></p>
+              <br><input type="submit" value="Поднеси" style="float: right;">
+              <input type = "reset" value = "Ресетирај">
+          </form>
+      </div>
+    </div>
+        <div class="kontakt">
+          <div class="centar">
+            <h3><span> Контактирајте ме</span></h3> 
+            <p><br>
+              <a href="https://www.facebook.com/mihaela.lazetic/" title="Facebook" ><img width="80px" height="80px" src="sliki\f1.png"><img  width="80px" height="80px" src="sliki\f2.png"></a>
+              <a href="https://www.instagram.com/mihaela_lazetic/" title="Instagram" ><img width="80px" height="80px" src="sliki\i1.png"><img  width="80px" height="80px" src="sliki\i2.png"></a>
+              <a href=""><img width="80px" height="80px" src="sliki/l1.png"><img width="80px" height="80px" src="sliki/l2.png"></a>
+            </p>
+            <div><br>
+              <h3> Mail: </h3><br>
+              <a href="mailto:mihaela_lazetic@yahoo.com" style="text-decoration: none; color: #a85ba8;"> mihaela_lazetic@yahoo.com </a>
+            </div>
+          </div>
+      </div>
+
+    <div id="footer">
+    <p>Михаела Лазетиќ 32/2017</p>
+    <p>Проектна задача по предметот Основи на Web Програмирање 2021/2022</p>
+    </div>
+</body>
+</html>
