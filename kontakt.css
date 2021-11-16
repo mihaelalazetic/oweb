@@ -282,12 +282,12 @@ footer {
 
 /* CSS */
 .button-24 {
-  background: #FF4742;
+  background: initial;
   border: 1px solid #FF4742;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #FF4742;
   cursor: pointer;
   display: inline-block;
   font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
@@ -299,15 +299,15 @@ footer {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-top: 8px;
-  margin-left: 200px;
+  margin-top: 7px;
+  margin-left: 210px;
 }
 
 .button-24:hover,
 .button-24:active {
-  background-color: initial;
+  background-color: #FF4742;
   background-position: 0 0;
-  color: #FF4742;
+  color: #ffffff;
 }
 
 .button-24:active {
