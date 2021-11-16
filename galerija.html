@@ -1,88 +1,368 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="kontakt.css" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
     <title>Галерија</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0" />
+    <link rel="stylesheet" href="galerija-style.css" />
+    <link rel="stylesheet" href="galerija.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap" rel="stylesheet"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <script type="text/javascript"> //za comment preview
+     
+     window.onload = function() {
+				function commentPreview(){
+					document.getElementById('previewbox').innerHTML = document.getElementById('comment').value;
+					return false;
+				}
+				document.getElementById('preview').onclick = commentPreview;
 
-    <style>
-     .gal img{
-    padding: 1em 2em;
-    height: 450px;
-    width: 400px;
-}
+        function commentPreview2(){
+					document.getElementById('previewbox2').innerHTML = document.getElementById('comment2').value;
+					return false;
+				}
+				document.getElementById('preview2').onclick = commentPreview2;
 
-.gal {
-position: relative;
-display: inline-block;
-text-align: center;
-margin-left: 3%;
-}
-.galerija{position: relative;}
-#upload{
-text-align: left;
-padding: 2.4em;
-}
-form{
-    margin-top: 150px;
-}
+        function commentPreview3(){
+					document.getElementById('previewbox3').innerHTML = document.getElementById('comment3').value;
+					return false;
+				}
+				document.getElementById('preview3').onclick = commentPreview3;
 
-    </style>
-</head>
-<body>
-    <div class="container">
+        var count = 0;
+        var btn = document.getElementById("preview2");
+  
+        btn.onclick = function () {
+            count++;
+            document.getElementById("br-kom2").innerHTML = count;
+        }
+      }
+      
+		</script>
+   
+
+    <script type="text/javascript"> //za lajkovi
+      function like(){
+        document.getElementById("like").style.color="red";
+        var p=document.getElementById("broj");
+        var text = p.textContent;
+        var number = Number(text);
+        var plus=number+1;
+        document.getElementById("like").innerHTML='<i class="fa fa-heart"></i> '+ plus;
+        window.addEventListener("load",like,false);
+      }
+
+      function like2(){
+        document.getElementById("like2").style.color="red";
+        var p=document.getElementById("broj2");
+        var text = p.textContent;
+        var number = Number(text);
+        var plus=number+1;
+        document.getElementById("like2").innerHTML='<i class="fa fa-heart"></i> '+ plus;
+        window.addEventListener("load",like2,false);
+      }
+
+      function like3(){
+        document.getElementById("like3").style.color="red";
+        var p=document.getElementById("broj3");
+        var text = p.textContent;
+        var number = Number(text);
+        var plus=number+1;
+        document.getElementById("like3").innerHTML='<i class="fa fa-heart"></i> '+ plus;
+        window.addEventListener("load",like3,false);
+      }
+
+    </script>
+
+  </head>
+
+  <body translate="no">
+    
+    <a href="home.html"><img src="sliki/logo4.png" alt="Михаела Лазетиќ" title="Михаела Лазетиќ" class="logo"></a>
+
+    <header>
+
+      <section class="container">
         <nav>
-        <a href="doma.html">Дома </a>
-        <a href="galerija.html" id="aktivno">Галерија</a>
-        <a href="blog.html" >Блог</a>
-        <a href="kontakt.html">Контакт</a>
-        </nav>
-      </div>
-      <h1><span>Галерија</span></h1> <br>
-      <form id="upload" action="" method="POST" class="gal">
-        <input type="file">
-        <button>Upload</button>
-      </form>
-<div class="galerija">
-    
-    
-      <div class="gal">
-          <img src="sliki/galerija/bulb.jpg" alt="Slika" loading='lazy'><br />
-          <button>Like</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Коментирај</button><br><input type="text" placeholder="Коментар">
-      </div>
-      <div class="gal"> 
-        <img src="sliki/galerija/cvekje.jpg" alt="Slika" loading='lazy'><br />
-        <button>Like</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Коментирај</button><br><input type="text" placeholder="Коментар">
-    </div>
-    <div class="gal">
-        <img src="sliki/galerija/donuts.jpg" alt="Slika" loading='lazy'><br />
-        <button>Like</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Коментирај</button><br><input type="text" placeholder="Коментар">    </div>
-    <div class="gal">
-        <img src="sliki/galerija/kaktus.jpg" alt="Slika" loading='lazy'><br />
-        <button>Like</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Коментирај</button><br><input type="text" placeholder="Коментар">    </div>
-    <div class="gal">
-        <img src="sliki/galerija/pesacki.jpg" alt="Slika" loading='lazy'><br />
-        <button>Like</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Коментирај</button><br><input type="text" placeholder="Коментар">    </div>
-    <div class="gal">
-        <img src="sliki/galerija/pustina.jpg" alt="Slika" loading='lazy'><br />
-        <button>Like</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Коментирај</button><br><input type="text" placeholder="Коментар">    </div>
-    <div class="gal">
-        <img src="sliki/galerija/ruza.jpg" alt="Slika" loading='lazy'><br />
-        <button>Like</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Коментирај</button><br><input type="text" placeholder="Коментар">    </div>
-    <div class="gal">
-        <img src="sliki/galerija/zeleno.jpg" alt="Slika" loading='lazy'><br />
-        <button>Like</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Коментирај</button><br><input type="text" placeholder="Коментар">    </div>
-    <div class="gal">
-        <img src="sliki/galerija/zgrada.jpg" alt="Slika" loading='lazy'><br />
-        <button>Like</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Коментирај</button><br><input type="text" placeholder="Коментар">      </div>
-</div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="home.html" >Дома</a>
+                </button>
+                <div class="dropdown-content">
+                <a href="#2">За мене</a>
+                <a href="#3">Favourites</a>
+                </div>
+            </div>
+            <a href="galerija.html" id="aktivno" >Галерија</a>
+            <a href="blog.html" >Блог</a>
+            <a href="kontakt.html">Контакт</a>
+        </nav> 
+      </section>
 
-<div style="padding-bottom: 10%;"></div>
-<div id="footer">
-    <p>Михаела Лазетиќ 32/2017</p>
-    <p>Проектна задача по предметот Основи на Web Програмирање 2021/2022</p>
-    </div>
-</body>
+    </header>
+    
+    <main>
+
+      <h2><span>Галерија</span></h2>
+
+      <div class="hes-gallery">
+        
+            <form> <!-- kopce za da se dodade slika -->
+              <label for="file-upload" class="custom-file-upload">
+                <i class="add fa fa-plus-square-o" style="font-size: 200px;"></i> 
+              </label>
+              <input id="file-upload" name='upload_cont_img' type="file" style="display:none;">
+            </form>
+
+          <figure>
+            <img src="sliki/galerija/bulb.jpg" alt="image2" data-subtext="Light Bulb with a pink background">
+            <figcaption>Light Bulb with a pink background</figcaption>
+            
+            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 53 </span></button><!-- likes -->
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a> <!-- komentari -->
+            <form>
+                <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
+                <button  class="btn btn-primary disabled" id="preview">Post</button>
+            </form>
+
+            <h4>Коментари</h4>
+
+            <div id="previewbox" ></div>
+          </figure>
+
+          <figure>
+            <img src="sliki/galerija/planeta.gif" alt="image3" data-subtext="Earth from space" class="vertical"/>
+            <figcaption>Earth from space</figcaption>
+
+            <button  id="like2" onclick="like2()"><i class="fa fa-heart"></i><span id="broj2"> 10 </span></button> <!-- likes -->
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom2"> 0 </span></a>
+
+            <form>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment2"></textarea>
+            </form>
+            <button class="btn btn-primary disabled" id="preview2" style="margin-top: -40px;">Post</button>
+
+            <h4>Коментари</h4>
+
+            <div id="previewbox2" ></div>
+          </figure>
+
+          <figure>
+            <img src="sliki/galerija/donuts.jpg" alt="image4" data-subtext="Six donuts with sprinkles" class="vertical"/>
+            <figcaption>Six donuts with sprinkles</figcaption>
+
+            <button  id="like3" onclick="like3()"><i class="fa fa-heart"></i><span id="broj3"> 14 </span></button>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+
+            <form >
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment3"></textarea>
+              <a href="#" class="btn btn-primary disabled" id="preview3">Post</a>
+            </form>
+
+            <h4>Коментари</h4>
+
+            <div id="previewbox3" ></div>
+          </figure>
+
+          <figure>
+            <img src="sliki/galerija/kaktus.jpg" alt="image1" data-subtext="Cactus in a pot" data-alt="kociak" class="vertical"/>
+            <figcaption>Cactus in a pot</figcaption>
+            
+            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 40 </span></button>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+
+            <form>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
+              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
+            </form>
+
+            <h4>Коментари</h4>
+
+            <div id="previewbox" ></div>
+          </figure>
+
+          <figure>
+            <img src="sliki/galerija/pesacki.jpg" alt="image2" data-subtext="Crosswalk bird view" class="horizontal"/>
+            <figcaption>Crosswalk bird view</figcaption>
+            
+            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 92 </span></button>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+
+            <form>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
+              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
+            </form>
+
+            <h4>Коментари</h4>
+
+            <div id="previewbox" ></div>
+          </figure>
+
+          <figure>
+            <img src="sliki/galerija/pustina.jpg" alt="image3" data-subtext="Long road in the dessert" class="horizontal"/>
+            <figcaption>Long road in  the dessert</figcaption>
+            
+            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 51 </span></button>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+
+            <form>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
+              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
+            </form>
+
+            <h4>Коментари</h4>
+
+            <div id="previewbox"></div>
+          </figure>
+
+          <figure>
+            <img src="sliki/galerija/ruza.jpg" alt="image4" data-subtext="A rose in a vase" data-alt="co jeest" class="horizontal" />
+            <figcaption>A rose in a vase</figcaption>
+            
+            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 75 </span></button>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+
+            <form>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
+              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
+            </form>
+
+            <h4>Коментари</h4>
+
+            <div id="previewbox"></div>
+          </figure>
+
+          <figure>
+            <img src="sliki/galerija/zeleno.jpg" alt="image5" data-subtext="Clovers" />
+            <figcaption>Clovers</figcaption>
+            
+            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 64 </span></button>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+
+            <form>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
+              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
+            </form>
+
+            <h4>Коментари</h4>
+
+            <div id="previewbox" ></div>
+          </figure>
+
+          <figure>
+            <img src="sliki/galerija/zgrada.jpg" alt="image6" data-subtext="Flat Iron building NY" />
+            <figcaption>Flat Iron building NY</figcaption>
+            
+            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 21 </span></button>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+
+            <form>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
+              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
+            </form>
+
+            <h4>Коментари</h4>
+
+            <div id="previewbox" ></div>
+          </figure>
+
+          <figure>
+            <img src="sliki/galerija/dogo-cuatro.jpeg" alt="image7" data-subtext="Fluffy white dog" />
+            <figcaption>Fluffy white dog</figcaption>
+            
+            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 77 </span></button>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+
+            <form>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
+              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
+            </form>
+
+            <h4>Коментари</h4>
+
+            <div id="previewbox" ></div>
+          </figure>
+
+          <figure>
+            <img src="sliki/galerija/dogo-tres.jpeg" alt="image8" data-subtext="Cute yawning dog" />
+            <figcaption>Cute yawning dog</figcaption>
+
+            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 47 </span></button>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+
+            <form>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
+              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
+            </form>
+
+            <h4>Коментари</h4>
+
+            <div id="previewbox" ></div>
+          </figure>
+
+          <figure>
+            <img src="sliki/galerija/dogo-uno.jpg" alt="image8" data-subtext="White fluff" />
+            <figcaption>White fluff</figcaption>
+            
+            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 73 </span></button>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>  
+
+            <form>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
+              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
+            </form>
+
+            <h4>Коментари</h4>
+
+            <div id="previewbox" ></div>
+          </figure>
+
+      </div>
+    </main>
+
+    <script src="galerija.js"></script>
+
+    <script>
+      HesGallery.setOptions({
+        disableScrolling: false,
+        hostedStyles: false,
+        animations: true,
+
+        showImageCount: true,
+        wrapAround: true,
+      })
+    </script>
+
+    <button type="button" class="butn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+      <i class="fa fa-arrow-up" style="font-size: 30px;"></i>
+    </button>
+
+    <footer>
+      <p class="copyright">Михаела Лазетиќ © 2021</p>
+      <div class="item social">
+          <a href="https://www.facebook.com/mihaela.lazetic/">
+              <i class="fa fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/mihaela_lazetic/">
+              <i class="fa fa-instagram"></i>
+          </a>
+          <a href="https://linkedin.com/in/mihaela-lazetic/">
+              <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="mailto:mihaela_lazetic@yahoo.com">
+              <i class="fa fa-yahoo"></i>
+          </a>
+          <a href="mailto:mihaela.lazetic@gmail.com">
+              <i class="fa fa-google"></i>
+          </a>
+      </div>
+    </footer>
+
+    <script src="home.js"></script>
+
+  </body>
 </html>

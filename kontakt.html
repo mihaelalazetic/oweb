@@ -5,90 +5,116 @@
     <link rel="stylesheet" href="kontakt.css" >
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="kontakt.css" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Контакт</title>
-    <style>
-    a img:last-child {
-    display: none;  
-  }
-  a:hover img:last-child {
-    display: block;  
-  }
-  a:hover img:first-child {
-    display: none;  
-  }
-  p a img {
-      float:inline-start;
-    display: flex;
-    padding: 10px;
-    align-self: center;
-  }
-    </style>
 </head>
+
 <body>
-    <div class="container">
+
+  <a href="home.html"><img src="sliki/logo4.png" alt="Михаела Лазетиќ" title="Михаела Лазетиќ" class="logo"></a>
+
+  <header>
+    <section class="container">
       <nav>
-      <a href="doma.html">Дома </a>
-      <a href="galerija.html" >Галерија</a>
-      <a href="blog.html" >Блог</a>
-      <a href="kontakt.html" id="aktivno">Контакт</a>
-      </nav>
-    </div>
-    
+          <div class="dropdown">
+              <button class="dropbtn">
+                  <a href="home.html" >Дома</a>
+              </button>
+              <div class="dropdown-content">
+              <a href="#2">За мене</a>
+              <a href="#3">Favourites</a>
+              </div>
+          </div>
+          <a href="galerija.html"  >Галерија</a>
+          <a href="blog.html" >Блог</a>
+          <a href="kontakt.html" id="aktivno">Контакт</a>
+      </nav> 
+    </section>
+  </header>
 
-      <div>
-        <h1><span>Контакт</span></h1> <br>
-        <div class="anketa">
-          <div class="centar">
-          <h2>Што мислите за мојата страна?</h2>
-          <span> За да добијам feedback од вас, пополнете ја следнава анкета:</span>
+  <h2><span>Анкета и Контакт</span></h2>
+  <div class="slika"></div>
+    <div class="anketa">
+      
+      <form autocomplete="on">
 
-          <form autocomplete="on">
-              <label >Име:</label>
-              <input type="text" name="fname" required ><br><br>
+        <label>
+          <strong style="float: left;"> Име:</strong>
+        </label>
+        
+        <label style="float: right;" >
+          <strong>E-mail:</strong>
+        </label> <br>
 
-              <label>Денешен датум</label> <input type="date"><br><br>
+        <input type="text" name="fname" required style=" height: 30px;float: left;width: 45%;">
+        <input type="text" name="lname" id="" style=" height: 30px;float: right; width: 45%;">
+        
+        <label>
+          <strong>Денешен датум </strong> <br>
+          <input type="date" style="padding: 10px;">
+        </label> <br>
 
-              <label>Колку ви се допаѓаше страната? (Оценка од 1-10)</label><br><br>
-              <input type="range" min="1" id="range_weight" required value="5" max="10"oninput="range_weight_disp.value = range_weight.value" > 
-              <output  id="range_weight_disp"></output><br><br>
+        <label>
+          <strong>Колку ви се допаѓаше страната? (Оценка од 1-10)</strong> <br>
+          <input  type="range" min="1" id="range_weight" required value="5" max="10" oninput="range_weight_disp.value = range_weight.value" > 
+          <br><output  id="range_weight_disp"></output>
+        </label><br>
+        
 
-          <p class="dopagja"> Што ви се допаѓаше? <br><br>
+        <p class="dopagja"> 
+          <strong>Што ви се допаѓаше?</strong> <br><br>
           <label><input type="checkbox" name="like" value="Боите">Боите</label>
           <label><input type="checkbox" name="like" value="дизајн">Дизајнот</label>
           <label><input type="checkbox" name="like" value="песни">Песните</label>
           <label><input type="checkbox" name="like" value="серии">Сериите</label>
           <label><input type="checkbox" name="like" value="др">Друго</label>
-          </p>
-          <br>    
-              <p><label>Коментари:<br><br>    
-                  <textarea name = "comments"
-                    rows = "5" cols = "40" placeholder="Внеси коментар"></textarea>
-              </label></p>
-              <br><input type="submit" value="Поднеси" style="float: right;">
-              <input type = "reset" value = "Ресетирај">
-          </form>
-      </div>
-    </div>
-        <div class="kontakt">
-          <div class="centar">
-            <h3><span> Контактирајте ме</span></h3> 
-            <p><br>
-              <a href="https://www.facebook.com/mihaela.lazetic/" title="Facebook" ><img width="80px" height="80px" src="sliki\f1.png"><img  width="80px" height="80px" src="sliki\f2.png"></a>
-              <a href="https://www.instagram.com/mihaela_lazetic/" title="Instagram" ><img width="80px" height="80px" src="sliki\i1.png"><img  width="80px" height="80px" src="sliki\i2.png"></a>
-              <a href=""><img width="80px" height="80px" src="sliki/l1.png"><img width="80px" height="80px" src="sliki/l2.png"></a>
-            </p>
-            <div><br>
-              <h3> Mail: </h3><br>
-              <a href="mailto:mihaela_lazetic@yahoo.com" style="text-decoration: none; color: #a85ba8;"> mihaela_lazetic@yahoo.com </a>
-            </div>
-          </div>
-      </div>
+        </p>  
 
-    <div id="footer">
-    <p>Михаела Лазетиќ 32/2017</p>
-    <p>Проектна задача по предметот Основи на Web Програмирање 2021/2022</p>
+        <p>
+          <label>
+            <strong>Коментари:</strong> <br><br>    
+            <textarea name = "comments" rows = "7" cols = "60" placeholder=" Внеси коментар..."></textarea>
+          </label>
+        </p> <br>
+
+        <button class="btn" role="button" style="float: right;">Поднеси</button>
+        <input type = "reset" value = "Ресетирај" class="button-24">
+
+      </form>
+  
     </div>
+
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+      <i class="fa fa-arrow-up" style="font-size: 30px;"></i>
+  </button>
+  
+    <footer>
+      <p class="copyright">Михаела Лазетиќ © 2021</p>
+      <div class="col item social">
+          <a href="https://www.facebook.com/mihaela.lazetic/">
+              <i class="fa fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/mihaela_lazetic/">
+              <i class="fa fa-instagram"></i>
+          </a>
+          <a href="https://linkedin.com/in/mihaela-lazetic/">
+              <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="mailto:mihaela_lazetic@yahoo.com">
+              <i class="fa fa-yahoo"></i>
+          </a>
+          <a href="mailto:mihaela.lazetic@gmail.com">
+              <i class="fa fa-google"></i>
+          </a>
+      </div>
+  </footer>
+  <script src="home.js"></script>
+
 </body>
 </html>

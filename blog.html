@@ -4,125 +4,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="kontakt.css" >
+    <link rel="stylesheet" href="blog.css" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Блог</title>
-    <style>
- body{opacity: 100%  ;}
-.blog{
-  display: inline-block;
-  justify-content: center;
-  padding: 80px;
-  margin-top: 5%;
-}
 
-.square{
-    min-width: 460px;
-	min-height: 430px;
-  max-width: 460px;
-	max-height: 430px;
-	background: white;
-  border-radius: 10px;
-    display: inline-block;
-    margin: 1em 4em;
-}
+    <script>
+      function start(){
+        var current = new Date();
+      document.getElementById( "time" ).innerHTML =current.toLocaleString();
+    }
+    window.addEventListener( "load", start, false );
 
-.mask{
-  clip: rect(0px, 460px, 220px, 0px);
-  border-radius: 10px;
-  position: absolute;
-}
-
-.h1{
-  margin: auto;
-  text-align: left;
-  margin-top: 240px;
-  padding-left: 30px;
-  font-size: 24px;
-}
-.h2{
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-}
-
-p{
- text-align: justify; 
- padding-left: 30px;
- padding-right: 30px;
- font-family: 'Open Sans', sans-serif;
- font-size: 12px;
- color: #C8C8C8;
- line-height: 18px;
-}
-
-.button {
-    background-color: rgb(170, 134, 184);
-    color: white;
-    width: 90px;
-    padding: 10px 15px;
-    border-radius: 3px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    margin: 20px 70px 0 30px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-    </style>
+    function count(){
+      var total=document.getElementById("text").value;
+      total=total.replace(/\s/g, '');
+      document.getElementById("total").innerHTML="Total Characters:"+total.length;
+    }
+    </script>
 </head>
+
 <body>
-    <div class="container">
-        <nav>
-        <a href="doma.html">Дома </a>
-        <a href="galerija.html" >Галерија</a>
-        <a href="blog.html" id="aktivno">Блог</a>
-        <a href="kontakt.html">Контакт</a>
-        </nav>
+  <a href="home.html"><img src="sliki/logo4.png" alt="Михаела Лазетиќ" title="Михаела Лазетиќ" class="logo"></a>
+  <header>
+    <section class="container">
+      <nav>
+          <div class="dropdown">
+              <button class="dropbtn">
+                  <a href="home.html" >Дома</a>
+              </button>
+              <div class="dropdown-content">
+              <a href="#2">За мене</a>
+              <a href="#3">Favourites</a>
+              </div>
+          </div>
+          <a href="galerija.html"  >Галерија</a>
+          <a href="blog.html" id="aktivno">Блог</a>
+          <a href="kontakt.html">Контакт</a>
+      </nav> 
+    </section>
+  </header>
+
+  <h2><span>Блог</span></h2>
+
+  <div class="blog">
+
+    <div class="square">
+      <h1>Внеси блог</h1>
+      <form id="upload" action="" method="post" class="gal" style="text-align: center;">
+        <label for="file-upload" class="custom-file-upload">
+          <i class="add fa fa-image" style="font-size: 30px;margin-bottom: 5px;"></i> 
+        </label>
+        <input id="file-upload" name='upload_cont_img' type="file" style="display:none;">
+    </form>
+    
+      <div style="text-align: center;">Наслов: <br>
+        <input type="text"> <br> Содржина: <br> 
+        <textarea name="telo" id="text" cols="45" rows="10" onkeyup="count();"></textarea>
+        <p id="total">Total Characters:0</p>
       </div>
-      <h1><span>Блог</span></h1> <br>
-
-      <div class="blog">
-        <div class="square">
-          <img  width="460px" src="https://images.unsplash.com/photo-1504610926078-a1611febcad3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e1c8fe0c9197d66232511525bfd1cc82&auto=format&fit=crop&w=1100&q=80" class="mask">
-       <div class="h1">Is Apple a Design Company?</div>
-          <p>Apple is more than a tech company; it became a culture unto itself, a passion of most of people and the birthplace of the world’s most revolutionized products.</p>
-       <div><a href="#" target="_" class="button">Прочитај повеќе</a></div>
-       <p style="color: #C8C8C8; float: right;">25/10/2021</p>
-        </div>
-
-        <div class="square"><img width="460px" src="https://demo.kallyas.net/wp-content/uploads/2015/08/ipad-605439_640.jpg" class="mask">
-            <div class="h1">Dramatically integrate viral technologies</div>
-               <p>Seamlessly syndicate out-of-the-box quality vectors via multimedia based bandwidth. Monotonectally supply team driven quality vectors via mission-critical networks. </p>
-            <div><a href="#" target="_" class="button">Прочитај повеќе</a></div>
-            <p style="color: #C8C8C8; float: right;">21/10/2021</p></div>
-
-        <div class="square"><img width="460px" src="https://www.riverpoolsandspas.com/hs-fs/hubfs/Blog%20posts%202019/D24%20small%20fiberglass%20pool.png?width=900&name=D24%20small%20fiberglass%20pool.png" class="mask">
-            <div class="h1">A Guide to Fiberglass Pool Costs</div>
-                <p>How much does a fiberglass pool cost?Although this is a very difficult question to answer, I will try to do my best here to explain some general pricing guidelines.</p>
-                <div><a href="#" target="_" class="button">Прочитај повеќе</a></div>
-                <p style="color: #C8C8C8; float: right;">12/10/2021</p>
-            </div>
         
+      <div><a href="#" target="_" class="button">Постирај</a></div>
+      <p style="color: #919191; float: right; margin-top: -15px;" id="time"></p></div>
 
-            <div class="square">
-                <div class="h2">Внеси блог</div>
-                <form id="upload" action="" method="post" class="gal" style="text-align: center;">
-                <input type="file">
-                <button>Прикачи слика</button>
-              </form>
-              <br>
-                <div style="text-align: center;">Наслов: <br><input type="text"> <br> Содржина: <br> <textarea name="telo" id="" cols="30" rows="10"></textarea></div>
-                   
-                <div><a href="#" target="_" class="button">Постирај</a></div>
-                <p style="color: #C8C8C8; float: right;">26/10/2021</p></div>
-    </div>
+    <div class="square">
+      <img  width="460px" src="https://images.unsplash.com/photo-1504610926078-a1611febcad3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e1c8fe0c9197d66232511525bfd1cc82&auto=format&fit=crop&w=1100&q=80" class="mask">
+      <div class="h1">Is Apple a Design Company?</div>
+      <p>Apple is more than a tech company; it became a culture unto itself, a passion of most of people and the birthplace of the world’s most revolutionized products.</p>
+      <div>
+        <a href="#" target="_" class="button">Прочитај повеќе</a>
       </div>
-
-<div id="footer">
-    <p>Михаела Лазетиќ 32/2017</p>
-    <p>Проектна задача по предметот Основи на Web Програмирање 2021/2022</p>
+      <p style="color: #919191; float: right;">25/10/2021</p>
     </div>
+
+    <div class="square"><img width="460px" src="https://demo.kallyas.net/wp-content/uploads/2015/08/ipad-605439_640.jpg" class="mask">
+        <div class="h1">Dramatically integrate viral technologies</div>
+          <p>Seamlessly syndicate out-of-the-box quality vectors via multimedia based bandwidth. Monotonectally supply team driven quality vectors via mission-critical networks. </p>
+        <div><a href="#" target="_" class="button">Прочитај повеќе</a></div>
+        <p style="color: #919191; float: right; margin-top: -20px;" >21/10/2021</p></div>
+
+    <div class="square"><img width="460px" src="https://www.riverpoolsandspas.com/hs-fs/hubfs/Blog%20posts%202019/D24%20small%20fiberglass%20pool.png?width=900&name=D24%20small%20fiberglass%20pool.png" class="mask">
+        <div class="h1">A Guide to Fiberglass Pool Costs</div>
+            <p>How much does a fiberglass pool cost?Although this is a very difficult question to answer, I will try to do my best here to explain some general pricing guidelines.</p>
+            <div><a href="#" target="_" class="button">Прочитај повеќе</a></div>
+            <p style="color: #919191; float: right;">12/10/2021</p>
+        </div>
+    
+  </div>
+
+
+  <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+    <i class="fa fa-arrow-up" style="font-size: 30px;"></i>
+  </button>
+
+  <footer>
+    <p class="copyright">Михаела Лазетиќ © 2021</p>
+    <div class="col item social">
+        <a href="https://www.facebook.com/mihaela.lazetic/">
+            <i class="fa fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/mihaela_lazetic/">
+            <i class="fa fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com/in/mihaela-lazetic/">
+            <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="mailto:mihaela_lazetic@yahoo.com">
+            <i class="fa fa-yahoo"></i>
+        </a>
+        <a href="mailto:mihaela.lazetic@gmail.com">
+            <i class="fa fa-google"></i>
+        </a>
+    </div>
+</footer>
+<script src="home.js"></script>
+
 </body>
 </html>
