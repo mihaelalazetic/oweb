@@ -11,12 +11,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap" rel="stylesheet"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    
+
     <script type="text/javascript"> //za comment preview
-     
+     var uname = window.prompt("Внеси username:");
+
      window.onload = function() {
 				function commentPreview(){
-					document.getElementById('previewbox').innerHTML = document.getElementById('comment').value;
+          var komentar=document.getElementById('comment').value;
+					document.getElementById('previewbox').innerHTML += uname +" : " + komentar +"</br>";
 					return false;
 				}
 				document.getElementById('preview').onclick = commentPreview;
@@ -115,7 +117,11 @@
               <label for="file-upload" class="custom-file-upload">
                 <i class="add fa fa-plus-square-o" style="font-size: 200px;"></i> 
               </label>
-              <input id="file-upload" name='upload_cont_img' type="file" style="display:none;">
+              <input id="file-upload" name='upload_cont_img' type="file" style="display:none;"> <br>
+              <label style="color: white;">Наслов: <br>
+                <input type="text" id="">
+              </label>
+              <button style="color: white;">Post</button>
             </form>
 
           <figure>
