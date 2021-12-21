@@ -4,87 +4,21 @@
     <title>Галерија</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="initial-scale=1.0" />
-    <link rel="stylesheet" href="galerija-style.css" />
-    <link rel="stylesheet" href="galerija.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gal.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap" rel="stylesheet"> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <script type="text/javascript"> //za comment preview
-     var uname = window.prompt("Внеси username:");
-
-     window.onload = function() {
-				function commentPreview(){
-          var komentar=document.getElementById('comment').value;
-					document.getElementById('previewbox').innerHTML += uname +" : " + komentar +"</br>";
-					return false;
-				}
-				document.getElementById('preview').onclick = commentPreview;
-
-        function commentPreview2(){
-					document.getElementById('previewbox2').innerHTML = document.getElementById('comment2').value;
-					return false;
-				}
-				document.getElementById('preview2').onclick = commentPreview2;
-
-        function commentPreview3(){
-					document.getElementById('previewbox3').innerHTML = document.getElementById('comment3').value;
-					return false;
-				}
-				document.getElementById('preview3').onclick = commentPreview3;
-
-        var count = 0;
-        var btn = document.getElementById("preview2");
-  
-        btn.onclick = function () {
-            count++;
-            document.getElementById("br-kom2").innerHTML = count;
-        }
-      }
-      
-		</script>
-   
-
-    <script type="text/javascript"> //za lajkovi
-      function like(){
-        document.getElementById("like").style.color="red";
-        var p=document.getElementById("broj");
-        var text = p.textContent;
-        var number = Number(text);
-        var plus=number+1;
-        document.getElementById("like").innerHTML='<i class="fa fa-heart"></i> '+ plus;
-        window.addEventListener("load",like,false);
-      }
-
-      function like2(){
-        document.getElementById("like2").style.color="red";
-        var p=document.getElementById("broj2");
-        var text = p.textContent;
-        var number = Number(text);
-        var plus=number+1;
-        document.getElementById("like2").innerHTML='<i class="fa fa-heart"></i> '+ plus;
-        window.addEventListener("load",like2,false);
-      }
-
-      function like3(){
-        document.getElementById("like3").style.color="red";
-        var p=document.getElementById("broj3");
-        var text = p.textContent;
-        var number = Number(text);
-        var plus=number+1;
-        document.getElementById("like3").innerHTML='<i class="fa fa-heart"></i> '+ plus;
-        window.addEventListener("load",like3,false);
-      }
-
-    </script>
-
+    <script src="js/komentar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/login.js"></script>
   </head>
 
   <body translate="no">
     
-    <a href="home.html"><img src="sliki/logo4.png" alt="Михаела Лазетиќ" title="Михаела Лазетиќ" class="logo"></a>
+    <a href="home.html"><img src="sliki/logo1.png" alt="Михаела Лазетиќ" title="Михаела Лазетиќ" class="logo"></a>
 
     <header>
 
@@ -111,240 +45,281 @@
 
       <h2><span>Галерија</span></h2>
 
-      <div class="hes-gallery">
+      <!-- Domasna broj 4 OWEB 10.12.2021 -->
+      <div style="color: aliceblue; float: right; margin-top: -100px; margin-right: 40px;">
+        <button id="search">Search the image titles and comments <i class="fa fa-search" ></i></button> <br>
         
-            <form> <!-- kopce za da se dodade slika -->
-              <label for="file-upload" class="custom-file-upload">
-                <i class="add fa fa-plus-square-o" style="font-size: 200px;"></i> 
-              </label>
-              <input id="file-upload" name='upload_cont_img' type="file" style="display:none;"> <br>
-              <label style="color: white;">Наслов: <br>
-                <input type="text" id="">
-              </label>
-              <button style="color: white;">Post</button>
-            </form>
+        <div id="s">
+          <input type="text" placeholder="Search image titles and comments..." id="prebaraj" size="30" > 
+        </div>
+
+      </div>
+
+      <div  style="color: aliceblue; float: left; margin-top: -100px; margin-left: 50px;">
+        <button style="color: aliceblue; cursor: pointer; font-size: medium;" id="login">Log in <i class="fa fa-sign-in" ></i></button> <br>
+        <input type="text" placeholder="Username" id="uname"> 
+      </div>
+
+      <script src="js/filter-gal.js"></script>
+      
+      
+      <img src="" id="blah"  width="400px"/>
+      <br>
+      <div class="gallery">
+        
+        <div id="up">
+          <input id="file-upload" type="file" style="color: white;"  onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+          <br><br>
+          <label style="color: white;">Наслов: &nbsp;
+            <input type="text" id="naslov" size="40">
+          </label> &nbsp;&nbsp;&nbsp;&nbsp;
+          <button  class="upload btn" >Post</button>
+        </div>  
+
+        <script src="/js/uploadpic.js"></script>
+        <script src="js/openpic.js"></script>
+
 
           <figure>
-            <img src="sliki/galerija/bulb.jpg" alt="image2" data-subtext="Light Bulb with a pink background">
+            <img src="sliki/galerija/bulb.jpg" alt="image2" >
             <figcaption>Light Bulb with a pink background</figcaption>
             
-            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 53 </span></button><!-- likes -->
-            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a> <!-- komentari -->
-            <form>
-                <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
-                <button  class="btn btn-primary disabled" id="preview">Post</button>
-            </form>
+            <!-- likes --> 
+            <span class="like">53</span>
+             <!-- komentari -->
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom0"> 2 </span></a>
+            <br>
+            <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment0"></textarea>
+            <div class="kopce-post">
+              <button  class="btn btn-primary disabled"  onclick="postComment(0);" >Post</button>
+            </div>
+            
+            <h4><i  class="fa fa-angle-down hide" style="cursor: pointer;"></i> Коментари</h4>
+            <div id="previewbox0"  class="kom">
+              <p>Guest: wow</p>
+              <p>Guest: nice</p>
+            </div>
 
-            <h4>Коментари</h4>
-
-            <div id="previewbox" ></div>
           </figure>
 
           <figure>
             <img src="sliki/galerija/planeta.gif" alt="image3" data-subtext="Earth from space" class="vertical"/>
             <figcaption>Earth from space</figcaption>
 
-            <button  id="like2" onclick="like2()"><i class="fa fa-heart"></i><span id="broj2"> 10 </span></button> <!-- likes -->
-            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom2"> 0 </span></a>
+             <!-- likes -->
+            <span class="like">10 </span>
+            <a id="komentari"><i class="fa fa-comment"></i><span id="br-kom1"> 1 </span></a>
+            <br>
+            <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment1"></textarea>
+            <div class="kopce-post">
+              <button class="btn btn-primary disabled" onclick="postComment(1);" >Post</button>
+            </div>
+            <h4><i  class="fa fa-angle-down hide" style="cursor: pointer;"></i>Коментари</h4>
 
-            <form>
-              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment2"></textarea>
-            </form>
-            <button class="btn btn-primary disabled" id="preview2" style="margin-top: -40px;">Post</button>
-
-            <h4>Коментари</h4>
-
-            <div id="previewbox2" ></div>
+            <div id="previewbox1"  class="kom">
+              <p>Guest: Lorem ipsum dolor sit amet</p>
+            </div>
           </figure>
 
           <figure>
             <img src="sliki/galerija/donuts.jpg" alt="image4" data-subtext="Six donuts with sprinkles" class="vertical"/>
             <figcaption>Six donuts with sprinkles</figcaption>
 
-            <button  id="like3" onclick="like3()"><i class="fa fa-heart"></i><span id="broj3"> 14 </span></button>
-            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+            <span class="like">14 </span>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom2"> 2 </span></a>
+            <br>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment2"></textarea>
+              <div class="kopce-post">
+                <button class="btn btn-primary disabled"  onclick="postComment(2);">Post</button>
+              </div>
 
-            <form >
-              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment3"></textarea>
-              <a href="#" class="btn btn-primary disabled" id="preview3">Post</a>
-            </form>
+            <h4><i  class="fa fa-angle-down hide" style="cursor: pointer;"></i>Коментари</h4>
 
-            <h4>Коментари</h4>
-
-            <div id="previewbox3" ></div>
+            <div id="previewbox2" class="kom">
+              <p>Guest: Fusce eu nunc non urna fermentum dictum. </p>
+              <p>Guest: Lorem ipsum dolor sit amet</p>
+            </div>
           </figure>
 
           <figure>
             <img src="sliki/galerija/kaktus.jpg" alt="image1" data-subtext="Cactus in a pot" data-alt="kociak" class="vertical"/>
             <figcaption>Cactus in a pot</figcaption>
             
-            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 40 </span></button>
-            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+            <span class="like">40 </span>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom3"> 3 </span></a>
+            <br>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment3"></textarea>
+              <div class="kopce-post">
+                <button class="btn btn-primary disabled" onclick="postComment(3);" >Post</button>
+              </div>
 
-            <form>
-              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
-              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
-            </form>
+            <h4><i  class="fa fa-angle-down hide" style="cursor: pointer;"></i>Коментари</h4>
 
-            <h4>Коментари</h4>
-
-            <div id="previewbox" ></div>
+            <div id="previewbox3" class="kom">
+              <p>Guest: Donec quis scelerisque augue.</p>
+              <p>Guest: Ut id imperdiet nulla.</p>
+            </div>
           </figure>
 
           <figure>
             <img src="sliki/galerija/pesacki.jpg" alt="image2" data-subtext="Crosswalk bird view" class="horizontal"/>
             <figcaption>Crosswalk bird view</figcaption>
             
-            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 92 </span></button>
-            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+            <span class="like">92 </span>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom4"> 0 </span></a>
+            <br>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment4"></textarea>
+              <div class="kopce-post">
+                <button class="btn btn-primary disabled" onclick="postComment(4);">Post</button>
+              </div>
 
-            <form>
-              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
-              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
-            </form>
+            <h4><i  class="fa fa-angle-down hide" style="cursor: pointer;"></i>Коментари</h4>
 
-            <h4>Коментари</h4>
-
-            <div id="previewbox" ></div>
+            <div id="previewbox4" class="kom"></div>
           </figure>
 
           <figure>
             <img src="sliki/galerija/pustina.jpg" alt="image3" data-subtext="Long road in the dessert" class="horizontal"/>
             <figcaption>Long road in  the dessert</figcaption>
             
-            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 51 </span></button>
-            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+            <span class="like">51 </span>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom5"> 0 </span></a>
+            <br>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment5"></textarea>
+              <div class="kopce-post">
+                <button class="btn btn-primary disabled" onclick="postComment(5);"  >Post</button>
+              </div>
 
-            <form>
-              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
-              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
-            </form>
+            <h4><i  class="fa fa-angle-down hide" style="cursor: pointer;"></i>Коментари</h4>
 
-            <h4>Коментари</h4>
-
-            <div id="previewbox"></div>
+            <div id="previewbox5" class="kom"></div>
           </figure>
 
           <figure>
             <img src="sliki/galerija/ruza.jpg" alt="image4" data-subtext="A rose in a vase" data-alt="co jeest" class="horizontal" />
             <figcaption>A rose in a vase</figcaption>
             
-            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 75 </span></button>
-            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+            
+            <span class="like">75 </span>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom6"> 0 </span></a>
+            <br>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment6"></textarea>
+              <div class="kopce-post">
+                <button class="btn btn-primary disabled" onclick="postComment(6);"  >Post</button>
+              </div>
 
-            <form>
-              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
-              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
-            </form>
+            <h4><i  class="fa fa-angle-down hide" style="cursor: pointer;"></i>Коментари</h4>
 
-            <h4>Коментари</h4>
-
-            <div id="previewbox"></div>
+            <div id="previewbox6" class="kom"></div>
           </figure>
 
           <figure>
             <img src="sliki/galerija/zeleno.jpg" alt="image5" data-subtext="Clovers" />
             <figcaption>Clovers</figcaption>
             
-            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 64 </span></button>
-            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+            
+            <span class="like">64 </span>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom7"> 0 </span></a>
+            <br>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment7"></textarea>
+              <div class="kopce-post">
+                <button class="btn btn-primary disabled" onclick="postComment(7);" >Post</button>
+              </div>
 
-            <form>
-              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
-              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
-            </form>
+            <h4><i  class="fa fa-angle-down hide" style="cursor: pointer;"></i>Коментари</h4>
 
-            <h4>Коментари</h4>
-
-            <div id="previewbox" ></div>
+            <div id="previewbox7" class="kom"></div>
           </figure>
 
           <figure>
             <img src="sliki/galerija/zgrada.jpg" alt="image6" data-subtext="Flat Iron building NY" />
             <figcaption>Flat Iron building NY</figcaption>
             
-            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 21 </span></button>
-            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+            <span class="like">21 </span>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom8"> 0 </span></a>
+            <br>
 
-            <form>
-              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
-              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
-            </form>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment8"></textarea>
+              <div class="kopce-post">
+                <button class="btn btn-primary disabled" onclick="postComment(8);" >Post</button>
+              </div>
 
-            <h4>Коментари</h4>
+            <h4><i  class="fa fa-angle-down hide" style="cursor: pointer;"></i>Коментари</h4>
 
-            <div id="previewbox" ></div>
+            <div id="previewbox8" class="kom"></div>
           </figure>
 
           <figure>
             <img src="sliki/galerija/dogo-cuatro.jpeg" alt="image7" data-subtext="Fluffy white dog" />
             <figcaption>Fluffy white dog</figcaption>
             
-            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 77 </span></button>
-            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+            <span class="like">77 </span>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom9"> 1 </span></a>
+            <br>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment9"></textarea>
+              <div class="kopce-post">
+                <button class="btn btn-primary disabled" onclick="postComment(9);" >Post</button>
+              </div>
 
-            <form>
-              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
-              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
-            </form>
+            <h4><i  class="fa fa-angle-down hide" style="cursor: pointer;"></i>Коментари</h4>
 
-            <h4>Коментари</h4>
-
-            <div id="previewbox" ></div>
+            <div id="previewbox9" class="kom">
+              <p>Guest: Adorable</p>
+            </div>
           </figure>
 
           <figure>
             <img src="sliki/galerija/dogo-tres.jpeg" alt="image8" data-subtext="Cute yawning dog" />
             <figcaption>Cute yawning dog</figcaption>
 
-            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 47 </span></button>
-            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>
+            <span class="like">47 </span>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom10"> 0 </span></a>
+            <br>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment10"></textarea>
+              <div class="kopce-post">
+                <button class="btn btn-primary disabled" onclick="postComment(10);" >Post</button>
+              </div>
 
-            <form>
-              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
-              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
-            </form>
+            <h4><i  class="fa fa-angle-down hide" style="cursor: pointer;"></i>Коментари</h4>
 
-            <h4>Коментари</h4>
-
-            <div id="previewbox" ></div>
+            <div id="previewbox10" class="kom" ></div>
           </figure>
 
           <figure>
             <img src="sliki/galerija/dogo-uno.jpg" alt="image8" data-subtext="White fluff" />
             <figcaption>White fluff</figcaption>
             
-            <button  id="like" onclick="like()"><i class="fa fa-heart"></i><span id="broj"> 73 </span></button>
-            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom"> 0 </span></a>  
+            <span class="like">73 </span>
+            <a  id="komentari"><i class="fa fa-comment"></i><span id="br-kom11"> 0 </span></a>  
+            <br>
+              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment11"></textarea>
+              <div class="kopce-post">
+                <button class="btn btn-primary disabled" onclick="postComment(11);" >Post</button>
+              </div>
 
-            <form>
-              <textarea name="comment" rows="2" cols="20" placeholder="Leave a comment here.." id="comment"></textarea>
-              <a href="#" class="btn btn-primary disabled" id="preview">Post</a>
-            </form>
+            <h4><i  class="fa fa-angle-down hide" style="cursor: pointer;"></i>Коментари</h4>
 
-            <h4>Коментари</h4>
-
-            <div id="previewbox" ></div>
+            <div id="previewbox11" class="kom" ></div>
           </figure>
+
+          <div class="popup-overlay">
+            <div class="popup-content">
+            </div>
+          </div>
+          
 
       </div>
     </main>
 
+    <script src="js/like.js"></script>
+
+    <script src="js/uploadphoto.js"></script>
+
     <script src="galerija.js"></script>
 
-    <script>
-      HesGallery.setOptions({
-        disableScrolling: false,
-        hostedStyles: false,
-        animations: true,
-
-        showImageCount: true,
-        wrapAround: true,
-      })
-    </script>
 
     <button type="button" class="butn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-      <i class="fa fa-arrow-up" style="font-size: 30px;"></i>
+      <i class="fa fa-arrow-up" style="font-size: 20px;"></i>
     </button>
 
     <footer>
@@ -368,7 +343,7 @@
       </div>
     </footer>
 
-    <script src="home.js"></script>
+    <script src="js/home.js"></script>
 
   </body>
 </html>

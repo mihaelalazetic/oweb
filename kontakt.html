@@ -2,22 +2,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="kontakt.css" >
+    <link rel="stylesheet" href="css/kontakt.css" >
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="kontakt.css" >
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap" rel="stylesheet"> 
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Контакт</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
 <body>
 
-  <a href="home.html"><img src="sliki/logo4.png" alt="Михаела Лазетиќ" title="Михаела Лазетиќ" class="logo"></a>
+  <a href="home.html"><img src="sliki/logo1.png" alt="Михаела Лазетиќ" title="Михаела Лазетиќ" class="logo"></a>
 
   <header>
     <section class="container">
@@ -39,10 +42,10 @@
   </header>
 
   <h2><span>Анкета и Контакт</span></h2>
-  <div class="slika"></div>
+  
     <div class="anketa">
-      
-      <form autocomplete="on">
+      <script src="js/kontakt.js"></script>
+      <form autocomplete="on" onsubmit="myFunction()">
 
         <label>
           <strong style="float: left;"> Име:</strong>
@@ -52,8 +55,8 @@
           <strong>E-mail:</strong>
         </label> <br>
 
-        <input type="text" name="fname" required style=" height: 30px;float: left;width: 45%;">
-        <input type="text" name="lname" id="" style=" height: 30px;float: right; width: 45%;">
+        <input type="text" name="fname" required placeholder="  Име..." style=" height: 30px;float: left;width: 45%;">
+        <input type="email" name="email" placeholder="   name@domain.com" style=" height: 30px;float: right; width: 45%;">
         
         <label>
           <strong>Денешен датум </strong> <br>
@@ -87,11 +90,12 @@
         <input type = "reset" value = "Ресетирај" class="button-24">
 
       </form>
-  
+      
     </div>
+    
 
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-      <i class="fa fa-arrow-up" style="font-size: 30px;"></i>
+      <i class="fa fa-arrow-up" style="font-size: 20px;"></i>
   </button>
   
     <footer>
@@ -114,7 +118,7 @@
           </a>
       </div>
   </footer>
-  <script src="home.js"></script>
+  <script src="js/home.js"></script>
 
 </body>
 </html>
